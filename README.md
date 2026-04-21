@@ -34,6 +34,11 @@ unzip msmd_aug_v1-1_no-audio.zip -d ./msmd_dataset
 ## Running the Training Pipeline
 Ensure your directory contains a ./checkpoints folder to hold intermediate .pth files. To train the network end-to-end, run the phases sequentially:
 
+Preprocess the Images
+```bash
+python preprocess_images.py
+```
+
 Phase 1: GNN-Audio Contrastive Training
 ```bash
 python train_phase1.py
