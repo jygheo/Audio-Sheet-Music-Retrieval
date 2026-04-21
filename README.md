@@ -1,6 +1,6 @@
 # Multimodal Sheet Music Contrastive Learning
 
-This project establishes a joint embedding space between raw sheet music images, audio spectrograms, and XML-derived graph networks. It employs a three-phase training architecture leveraging Swin Transformers and Graph Attention Networks (GAT) alongside Contrastive Learning (MoCo).
+This project establishes a joint embedding space between raw sheet music images, audio spectrograms, and XML-derived graph networks. It uses Swin Transformers to encode spectrograms and sheet music crops, and Graph Attention Networks (GAT) alongside Contrastive Learning (MoCo).
 Training:[colab](https://drive.google.com/file/d/1E6JfUSSxqE5v19OKsW20HSeVMKslJB8k/view?usp=sharing)
 
 ## Project Structure
@@ -32,7 +32,7 @@ unzip msmd_aug_v1-1_no-audio.zip -d ./msmd_dataset
 ```
 
 ## Running the Training Pipeline
-Ensure your directory contains a ./checkpoints folder to hold intermediate .pth files. To train the network end-to-end, run the phases sequentially:
+Ensure your directory contains a ./checkpoints folder to hold intermediate .pth files. To train, run the phases sequentially:
 
 Preprocess the Images
 ```bash
