@@ -30,18 +30,22 @@ wget "[https://zenodo.org/record/2597505/files/msmd_aug_v1-1_no-audio.zip](https
 unzip msmd_aug_v1-1_no-audio.zip -d ./msmd_dataset
 ```
 
-##Running the Training Pipeline
+## Running the Training Pipeline
 Ensure your directory contains a ./checkpoints folder to hold intermediate .pth files. To train the network end-to-end, run the phases sequentially:
 
 Phase 1: GNN-Audio Contrastive Training
-Bash
+```bash
 python train_phase1.py
+```
 Phase 2: Graph-to-Vision Teacher/Student Distillation
-Bash
+```bash
 python train_phase2.py
+```
 Phase 3: Joint Vision-Audio Fine-Tuning
-Bash
+```bash
 python train_phase3.py
+```
 Isolate Inference Checkpoints
-Bash
+```bash
 python export_weights.py
+```
