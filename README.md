@@ -1,6 +1,7 @@
 # Multimodal Sheet Music Contrastive Learning
 
 This project establishes a joint embedding space between raw sheet music images, audio spectrograms, and XML-derived graph networks. It employs a three-phase training architecture leveraging Swin Transformers and Graph Attention Networks (GAT) alongside Contrastive Learning (MoCo).
+Training:[colab](https://drive.google.com/file/d/1E6JfUSSxqE5v19OKsW20HSeVMKslJB8k/view?usp=sharing)
 
 ## Project Structure
 
@@ -26,7 +27,7 @@ The data pipeline relies on the MSMD dataset (Augmented v1.1). Ensure it's unzip
 
 ```bash
 # Example Download
-wget "[https://zenodo.org/record/2597505/files/msmd_aug_v1-1_no-audio.zip](https://zenodo.org/record/2597505/files/msmd_aug_v1-1_no-audio.zip)"
+wget "https://zenodo.org/record/2597505/files/msmd_aug_v1-1_no-audio.zip"
 unzip msmd_aug_v1-1_no-audio.zip -d ./msmd_dataset
 ```
 
