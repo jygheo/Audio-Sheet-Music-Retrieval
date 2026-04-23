@@ -10,7 +10,7 @@ Training pipeline relies heavily on the structural annotations provided by the M
 To speed up cross-modal alignment, we use the structural information from MSMD XML files to create directed graphs representing the musical score. 
 
 * **Node Features:** Each note is represented as a node. Nodes encode continuous features (normalized bounding box `[top, left, width, height]`, normalized onset time, and duration) as well as categorical embeddings (MIDI pitch).
-* **Edge Construction:** The adjacency matrix is built using standard XML outlinks, and additional bidirectional edges for simultaneous notes (chords) and forward-directed edges connecting directly adjacent notes over time.
+* **Edge Construction:** The adjacency matrix is built using the given XML outlinks, and additional bidirectional edges for simultaneous notes (chords) and forward-directed edges connecting directly adjacent notes over time.
 * **Image and Audio Preprocessing:** Full sheet music pages are cropped into individual staff lines. Audio spectrograms are sliced into discrete time chunks, nomalized and padded to match batch dimensions. During training, images are augmented with affine transformations and color/sharpness jittering, while spectrograms use SpecAugment (time and frequency masking).
 
 ### Training
@@ -23,14 +23,6 @@ Cross-modal alignment in Phases 1 and 3 uses Momentum Contrast to maintain a lar
 * **Queue Size (K):** 16384
 * **Momentum (m):** 0.999
 * **Temperature (τ):** 0.07
-
-### Evaluation Metrics
-Cross-modal retrieval performance (Audio-to-Score and Score-to-Audio) is measured using the following ranking metrics:
-* **R@1:** 
-* **R@5:** 
-* **R@25:**
-* **MRR (Mean Reciprocal Rank):** 
-* **MR (Median Rank):** 
 
 ---
 **References**
